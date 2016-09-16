@@ -1,0 +1,25 @@
+{
+  "name": "video-voting",
+  "version": "1.0.0",
+  "description": "Video Voting App for youtube movie nights",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "react": "^15.3.1",
+    "react-bootstrap": "^0.30.3",
+    "react-dom": "^15.3.1",
+    "webpack": "^1.13.2",
+    "webpack-dev-middleware": "^1.7.0",
+    "webpack-hot-middleware": "^2.12.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Glen Mailer <glen@stainlessed.co.uk>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/glenjamin/video-voting.git"
+  }
+}
