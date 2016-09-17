@@ -5,5 +5,5 @@ module.exports = {
   },
   "parser": "babel-eslint",
   "plugins": ["react"],
-  "extends": ["eslint:recommended", "plugin:react/recommended"]
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
 }
