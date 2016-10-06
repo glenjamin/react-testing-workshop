@@ -1,12 +1,16 @@
-# Video Voting
+# React Testing Workshop
 
-## Spec
+## Tasks
 
- * Owner enters a bunch of videos via youtube URLs
- * Owner publishes onto a friendly URL, also keeps special owner URL
- * Owner enters a number of names to represent attendees
- * Each attendee can be added to each video
- * Button to sort list by current vote count
- * Clients can open the same URL and vote for themselves
- * Owner can lock the page which stops new votes being allowed
- * Server should persist this data somehow
+The application spec is helpfully provided by [TodoMVC](https://github.com/tastejs/todomvc/blob/master/app-spec.md#functionality).
+
+### Part 1: Staying out of React
+
+  1. Flesh out some test scenarios for clearCompleted in `todos-spec.js`.
+  2. Implement clearCompleted in `todos.js`.
+  3. Move the `.trim()` logic out of `Header.js` and `TodoItem.js` into the data layer in `todos.js` and expand test coverage in `todos-spec.js`.
+
+### Part 2: Shallow Rendering
+
+
+### Part 3: Visual Feedback

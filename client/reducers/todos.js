@@ -1,6 +1,7 @@
-import {append} from "./utils";
+import {append, update, updateArrayById} from "./utils";
 
-const initial = [
+// Dummy data only in the browser
+const initial = typeof window === "undefined" ? [] : [
   {
     id: 1,
     title: "Buy Milk",
@@ -35,6 +36,26 @@ export default function reducer(state = initial, action) {
         title: action.title,
         completed: false
       })
+    }
+    case "TOGGLE_TODO": {
+      return updateArrayById(state, action.id,
+        (todo) => update(todo, {completed: !todo.completed})
+      );
+    }
+    case "EDIT_TODO": {
+      return updateArrayById(state, action.id,
+        (todo) => update(todo, {title: action.title})
+      );
+    }
+    case "REMOVE_TODO": {
+      return state.filter((todo) => todo.id !== action.id);
+    }
+    case "SET_ALL": {
+      return state.map((todo) => update(todo, {completed: action.completed}));
+    }
+    case "CLEAR_COMPLETED": {
+      // eslint-disable-next-line
+      alert("Not implemented - your turn");
     }
   }
   return state;

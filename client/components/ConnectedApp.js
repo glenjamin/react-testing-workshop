@@ -15,6 +15,14 @@ export default connect(
     };
   },
   {
-    addTodo: actions.addTodo
+    addTodo: actions.addTodo,
+    toggleTodo: actions.toggleTodo,
+    editTodo: actions.editTodo,
+    removeTodo: actions.removeTodo,
+
+    setAll: actions.setAll,
+    clearCompleted: actions.clearCompleted,
+
+    selectFilter: actions.selectFilter,
   }
 )(App);

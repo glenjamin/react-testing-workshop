@@ -21,6 +21,14 @@ export default class App extends React.Component {
 
     // actions
     addTodo: React.PropTypes.func.isRequired,
+    toggleTodo: React.PropTypes.func.isRequired,
+    editTodo: React.PropTypes.func.isRequired,
+    removeTodo: React.PropTypes.func.isRequired,
+
+    setAll: React.PropTypes.func.isRequired,
+    clearCompleted: React.PropTypes.func.isRequired,
+
+    selectFilter: React.PropTypes.func.isRequired,
   };
   render() {
     const {todos, filter, total, completed} = this.props;
@@ -29,17 +37,17 @@ export default class App extends React.Component {
         <Header addTodo={this.props.addTodo} />
         <Main
           todos={todos}
-          setAll={() => {}}
-          toggleTodo={() => {}}
-          editTodo={() => {}}
-          removeTodo={() => {}}
+          setAll={this.props.setAll}
+          toggleTodo={this.props.toggleTodo}
+          editTodo={this.props.editTodo}
+          removeTodo={this.props.removeTodo}
         />
         <Footer
           filter={filter}
           completed={completed}
           total={total}
-          selectFilter={() => {}}
-          clearCompleted={() => {}}
+          selectFilter={this.props.selectFilter}
+          clearCompleted={this.props.clearCompleted}
         />
       </section>
     );
