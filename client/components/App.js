@@ -18,12 +18,15 @@ export default class App extends React.Component {
     ]).isRequired,
     total: React.PropTypes.number.isRequired,
     completed: React.PropTypes.number.isRequired,
+
+    // actions
+    addTodo: React.PropTypes.func.isRequired,
   };
   render() {
     const {todos, filter, total, completed} = this.props;
     return (
       <section className="todoapp">
-        <Header addTodo={() => {}} />
+        <Header addTodo={this.props.addTodo} />
         <Main
           todos={todos}
           setAll={() => {}}
