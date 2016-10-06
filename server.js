@@ -15,6 +15,15 @@ app.use(webpackDevMiddleware(compiler, {
 }));
 app.use(webpackHotMiddleware(compiler));
 
+app.get("/base.css", (req, res) => {
+  res.sendFile(require.resolve("todomvc-common/base.css"));
+});
+app.get("/index.css", (req, res) => {
+  res.sendFile(require.resolve("todomvc-app-css/index.css"));
+});
+app.get("/devboard", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "devboard.html"));
+});
 app.use("/", express.static(path.join(__dirname, "public")));
 
 const server = http.createServer(app);
