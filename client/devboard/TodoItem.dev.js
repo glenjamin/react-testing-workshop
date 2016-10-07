@@ -2,7 +2,7 @@ import React from "react";
 
 import devboard from "devboard";
 
-const definecard = devboard.ns("<TodoItem />");
+const definecard = devboard.ns("2. <TodoItem />");
 
 import DemoBox from "./DemoBox";
 import TodoItem from "../components/TodoItem";
