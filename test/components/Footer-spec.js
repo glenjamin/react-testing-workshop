@@ -1,6 +1,6 @@
 /* eslint-env mocha */
 import {assert} from "chai";
-// import sinon from "sinon";
+import sinon from "sinon";
 
 import React from "react";
 import sd from "skin-deep";
@@ -40,6 +40,15 @@ describe("<Footer />", () => {
       const tree = sd.shallowRender(<Footer total={5} completed={0} />);
       const clear = tree.subTree(".qa-clear-completed");
       assert.isFalse(clear);
+    });
+    it("should trigger clearCompleted() when clicked", () => {
+      const clearCompleted = sinon.spy();
+      const tree = sd.shallowRender(<Footer
+        total={5} completed={4}
+        clearCompleted={clearCompleted}
+      />);
+      tree.subTree(".qa-clear-completed").props.onClick();
+      assert.equal(clearCompleted.callCount, 1);
     });
   });
 });
