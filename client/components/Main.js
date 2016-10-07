@@ -2,6 +2,8 @@ import React from "react";
 
 import TodoItem from "./TodoItem";
 
+const noop = () => {};
+
 export default class Main extends React.Component {
   static propTypes = {
     todos: React.PropTypes.array.isRequired,
@@ -10,6 +12,13 @@ export default class Main extends React.Component {
     editTodo: React.PropTypes.func.isRequired,
     removeTodo: React.PropTypes.func.isRequired,
   };
+  static defaultProps = {
+    setAll: noop,
+    toggleTodo: noop,
+    editTodo: noop,
+    removeTodo: noop,
+  };
+
   render() {
     var {
       todos,
@@ -22,7 +31,7 @@ export default class Main extends React.Component {
     return (
       <section className="main">
         <input
-          className="toggle-all" type="checkbox"
+          className="toggle-all qa-toggle-all" type="checkbox"
           checked={all} onChange={() => setAll(!all)}
         />
         <label htmlFor="toggle-all">Mark all as complete</label>
