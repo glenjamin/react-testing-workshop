@@ -6,6 +6,8 @@ const filters = [
   {name: "completed", label: "Completed"},
 ];
 
+const noop = () => {};
+
 export default class Footer extends React.Component {
   static propTypes = {
     filter: React.PropTypes.string.isRequired,
@@ -13,7 +15,15 @@ export default class Footer extends React.Component {
     completed: React.PropTypes.number.isRequired,
     selectFilter: React.PropTypes.func.isRequired,
     clearCompleted: React.PropTypes.func.isRequired,
-  }
+  };
+  static defaultProps = {
+    filter: "all",
+    total: 0,
+    completed: 0,
+    selectFilter: noop,
+    clearCompleted: noop,
+  };
+
   render() {
     var {filter, total, completed, selectFilter, clearCompleted} = this.props;
     if (total === 0) {
@@ -42,7 +52,7 @@ export default class Footer extends React.Component {
         </ul>
         {completed > 0 &&
           <button
-            className="clear-completed"
+            className="clear-completed qa-clear-completed"
             onClick={() => clearCompleted()}
           >
             Clear completed ({completed})
