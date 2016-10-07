@@ -1,4 +1,6 @@
-/* @flow */
+import "../styles/base.css";
+import "../styles/index.css";
+
 const context = require.context("./", true, /\.dev\.js$/);
 context.keys().forEach((moduleName) => {
   try {
@@ -11,6 +13,7 @@ context.keys().forEach((moduleName) => {
     });
   }
 });
+
 if (module.hot) {
   module.hot.accept();
 }

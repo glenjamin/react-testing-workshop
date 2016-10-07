@@ -8,6 +8,7 @@ export default class TodoItem extends React.Component {
     edit: React.PropTypes.func.isRequired,
     remove: React.PropTypes.func.isRequired,
     toggle: React.PropTypes.func.isRequired,
+    forceEditing: React.PropTypes.bool,
   };
   static defaultProps = {
     edit: noop,
@@ -31,6 +32,9 @@ export default class TodoItem extends React.Component {
   render() {
     var { todo: {completed, title}, toggle, remove } = this.props;
     var { editing, value } = this.state;
+    if (this.props.forceEditing) {
+      editing = true;
+    }
     var classNames = [
       completed ? "completed" : "",
       editing ? "editing" : ""
