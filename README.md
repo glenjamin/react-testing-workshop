@@ -1,5 +1,7 @@
 # React Testing Workshop
 
+For some great general advice on testing see https://eev.ee/blog/2016/08/22/testing-for-people-who-hate-testing/
+
 ## Setup
 
 * `npm install`
