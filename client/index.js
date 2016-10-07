@@ -9,6 +9,9 @@ import {Provider} from "react-redux";
 import ConnectedApp from "./components/ConnectedApp";
 import reducer from "./reducers";
 
+import "./styles/base.css";
+import "./styles/index.css";
+
 let store = createStore(reducer);
 
 // Enable hot module replacement for the application

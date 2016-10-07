@@ -28,11 +28,15 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: [/node_modules/],
-        loader: "babel-loader"
+        loader: "babel"
       },
       {
         test: /\.json$/,
-        loader: "json-loader"
+        loader: "json"
+      },
+      {
+        test: /\.css$/,
+        loader: "style!css"
       }
     ]
   },
