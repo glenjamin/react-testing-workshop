@@ -1,12 +1,19 @@
 import React from "react";
 
+const noop = () => {};
+
 export default class TodoItem extends React.Component {
   static propTypes = {
     todo: React.PropTypes.object.isRequired,
     edit: React.PropTypes.func.isRequired,
     remove: React.PropTypes.func.isRequired,
     toggle: React.PropTypes.func.isRequired,
-  }
+  };
+  static defaultProps = {
+    edit: noop,
+    remove: noop,
+    toggle: noop,
+  };
 
   state = {value: this.props.todo.title, editing: false};
 

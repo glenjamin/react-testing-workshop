@@ -37,7 +37,7 @@ export default class Footer extends React.Component {
           {" "}
           item{left === 1 ? "" : "s"} left
         </span>
-        <ul className="filters">
+        <ul className="filters qa-filters">
           {filters.map(({name, label}) => (
             <li key={name}>
               <a
